@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        "BlueCreationWrappers"
+    </assembly>
+    <members>
+        <member name="M:BlueCreationWrappers.HidWrapper.WritePsKey(System.IntPtr,System.UInt16,System.Byte[])">
+            <summary> Sends an internal command for writing a PSKey (not tested) </summary>
+            <param name="dev"> A handle to an opened device. </param>
+            <param name="pskey"> The PSKey number. </param>
+            <param name="byteArray"> The output data buffer. </param>
+            <returns> Return true on success, false on failure. </returns>
+        </member>
+        <member name="M:BlueCreationWrappers.HidWrapper.ReadPsKey(System.IntPtr,System.UInt16,System.Byte[])">
+            <summary> Sends an internal command for reading a PSKey (not tested) </summary>
+            <param name="dev"> A handle to an opened device. </param>
+            <param name="pskey"> The PSKey number. </param>
+            <param name="byteArray"> The output data buffer. </param>
+            <returns> Return true on success, false on failure. </returns>
+        </member>
+        <member name="M:BlueCreationWrappers.HidWrapper.StopNotification">
+            <summary> stops the usb notification that started with <see cref="M:BlueCreationWrappers.HidWrapper.StartNotification(System.UInt16,System.UInt16,BlueCreationWrappers.UsbNotificationDelegate)" /> (not tested) </summary>
+            <returns> return 0 if successful, 1 otherwise. </returns>
+        </member>
+        <member name="M:BlueCreationWrappers.HidWrapper.StartNotification(System.UInt16,System.UInt16,BlueCreationWrappers.UsbNotificationDelegate)">
+            <summary> Start a seperate thread that calls pCallback when the device is inserted and when removed. (not tested) </summary>
+            <param name="vid"> the Vendor ID of the device to monitor. </param>
+            <param name="pid"> the Product ID of the device to monitor. </param>
+            <param name="notificationDelegate"> a callback function to call when a device is inserted or removed. </param>
+            <returns> return 0 if registration is successful, 1 otherwise. </returns>
+        </member>
+        <member name="M:BlueCreationWrappers.HidWrapper.WaitForUsbDevice(System.UInt16,System.UInt16,System.Int32)">
+            <summary>
+                <para> Wait for a usb device to attach or for the timeout to elapse.
+The function will return on the first device inserted.
+The function returns immediately if a device is already enumerated. </para>
+            </summary>
+            <param name="vid"> the Vendor ID of the device to wait for. </param>
+            <param name="pid"> the Produce ID of the device to wait for. </param>
+            <param name="timeout"> the timeout to return if device was not detected in seconds. </param>
+            <returns> returns 0 if device detached or timedout, 1 if device is attached. </returns>
+        </member>
+        <member name="M:BlueCreationWrappers.HidWrapper.RebootToDfu(System.IntPtr)">
+            <summary> Sends an internal command for resetting the device in DFU mode. </summary>
+            <param name="dev">A handle to an opened device </param>
+        </member>
+        <member name="M:BlueCreationWrappers.HidWrapper.ResetDevice(System.IntPtr)">
+            <summary> Sends an internal command for resetting the device. </summary>
+            <param name="dev"> A handle to an opened device </param>
+        </member>
+        <member name="M:BlueCreationWrappers.HidWrapper.ReadWithTimeout(System.IntPtr,System.Byte[],System.Int32)">
+            <summary> Waits for and reads an incoming HID report. </summary>
+            <param name="dev"> A handle to an opened device </param>
+            <param name="byteArray"> The data buffer.
+Note: Must be set to 64. </param>
+            <param name="ms"> The number of millisecond to wait for. Set to -1 to request an infinite waiting timeout.</param>
+            <returns> The number of bytes read, or -1 on error/timeout condition. </returns>
+        </member>
+        <member name="M:BlueCreationWrappers.HidWrapper.SendRawReport(System.IntPtr,System.Byte[])">
+            <summary>
+Send a raw HID report. The first byte must be set to the desired ReportID, with the value 0x03 being reserved for internal use.
+</summary>
+            <param name="dev"> A handle to an opened device </param>
+            <param name="byteArray"> The input report data buffer. 
+Note: Must be set to 64.</param>
+            <returns> Returns true on success, false on failure. </returns>
+        </member>
+        <member name="M:BlueCreationWrappers.HidWrapper.SendUserReport(System.IntPtr,System.Byte[])">
+            <summary> Send an user HID report. </summary>
+            <param name="dev"> A handle to an opened device </param>
+            <param name="byteArray"> The input report data buffer 
+Note: Must be set to 63. </param>
+            <returns> Returns true on success, false on failure. </returns>
+        </member>
+        <member name="M:BlueCreationWrappers.HidWrapper.Close(System.IntPtr)">
+            <summary> Close a hid connection to an opened device. </summary>
+            <param name="dev"> A handle to an opened device. </param>
+        </member>
+        <member name="M:BlueCreationWrappers.HidWrapper.Open(System.String)">
+            <summary> Open a hid connection to a device </summary>
+            <param name="DevicePath"> the device path as returned by <see cref="M:BlueCreationWrappers.HidWrapper.GetDevice(System.Int32)" />. </param>
+            <returns> A Handle to the connected device. This handle is used by all functions to talk to this device. </returns>
+        </member>
+        <member name="M:BlueCreationWrappers.HidWrapper.GetDevice(System.Int32)">
+            <summary> Get the path of the found device. </summary>
+            <param name="DeviceNumber"> a device number between 1 and the return of <see cref="M:BlueCreationWrappers.HidWrapper.GetNumberOfDevices" /></param>
+            <returns> The path of the device if available. </returns>
+        </member>
+        <member name="M:BlueCreationWrappers.HidWrapper.GetNumberOfDevices">
+            <summary> Get the number of the found devices with the initialised vid and pid. </summary>
+            <returns> Returns the number of found devices. </returns>
+        </member>
+        <member name="M:BlueCreationWrappers.HidWrapper.Exit">
+            <summary>
+Deinitializes the HID framework and cleans up used ressources. Must be called at the end of the user program.
+Note: The caller needs to close any opened devices before calling this function.
+</summary>
+        </member>
+        <member name="M:BlueCreationWrappers.HidWrapper.Init(System.UInt16,System.UInt16)">
+            <summary> Init the hid library to work with specific device </summary>
+            <param name="vid"> The vendor ID of the device </param>
+            <param name="pid"> The product ID of the device </param>
+            <returns> true if successful, false otherweise </returns>
+        </member>
+        <member name="T:BlueCreationWrappers.HidWrapper">
+            <summary> .NET Wrapper for bc_hid.dll version 2.0.0.0 </summary>
+        </member>
+    </members>
+</doc>

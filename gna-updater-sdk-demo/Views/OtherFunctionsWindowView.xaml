@@ -1,0 +1,226 @@
+﻿<Window x:Class="GNAUpdaterSDK_Demo.Views.OtherFunctionsWindowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:intr="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GNAUpdaterSDK_Demo.Views"
+        mc:Ignorable="d"
+        Title="Other Functions" Height="500" Width="800">
+
+    <intr:Interaction.Triggers>
+        <intr:EventTrigger EventName="Closing">
+            <intr:InvokeCommandAction Command="{Binding WindowClosing}" />
+        </intr:EventTrigger>
+    </intr:Interaction.Triggers>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Stretch" Command="{Binding ClickTestServerConnectionCommand}" IsEnabled="{Binding ApiInitialized, Source={StaticResource GeneralHelper}}" VerticalAlignment="Center">
+                <TextBlock FontWeight="Bold" Text="Test Server Connection" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Button>
+            <Label Grid.Column="0" Grid.Row="1" Content="Result:" HorizontalContentAlignment="Right" FontWeight="Bold" />
+            <TextBox Grid.Column="1" Grid.Row="1" Margin="5" HorizontalContentAlignment="Left" Text="{Binding OtherFunctionsWindowModel.ResultTestServerConnection, Converter={StaticResource CommandResultsToStringConverter}}" Background="Transparent" BorderThickness="0" IsReadOnly="True" TextWrapping="Wrap"/>
+        </Grid>
+
+        <Grid Grid.Column="0" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Stretch" Command="{Binding ClickSubscribeEventsCommand}" IsEnabled="{Binding ApiInitialized, Source={StaticResource GeneralHelper}}" VerticalAlignment="Center">
+                <TextBlock FontWeight="Bold" Text="Subscribe Events" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Button>
+            <Label Grid.Column="0" Grid.Row="1" Content="Result:" HorizontalContentAlignment="Right" FontWeight="Bold" />
+            <TextBox Grid.Column="1" Grid.Row="1" Margin="5" HorizontalContentAlignment="Left" Text="{Binding OtherFunctionsWindowModel.ResultSubscribeEvents, Converter={StaticResource CommandResultsToStringConverter}}" Background="Transparent" BorderThickness="0" IsReadOnly="True" TextWrapping="Wrap"/>
+        </Grid>
+
+        <Grid Grid.Column="0" Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Stretch" Command="{Binding ClickClearSubscriptionsCommand}" IsEnabled="{Binding ApiInitialized, Source={StaticResource GeneralHelper}}" VerticalAlignment="Center">
+                <TextBlock FontWeight="Bold" Text="Clear Subscriptions" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Button>
+            <Label Grid.Column="0" Grid.Row="1" Content="Result:" HorizontalContentAlignment="Right" FontWeight="Bold" />
+            <TextBox Grid.Column="1" Grid.Row="1" Margin="5" HorizontalContentAlignment="Left" Text="{Binding OtherFunctionsWindowModel.ResultClearSubscriptions, Converter={StaticResource CommandResultsToStringConverter}}" Background="Transparent" BorderThickness="0" IsReadOnly="True" TextWrapping="Wrap"/>
+        </Grid>
+
+        <Grid Grid.Column="0" Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Stretch" Command="{Binding ClickOfflineModeCommand}" IsEnabled="{Binding ApiInitialized, Source={StaticResource GeneralHelper}}" VerticalAlignment="Center">
+                <TextBlock FontWeight="Bold" Text="Offline Mode" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Button>
+            <Label Grid.Column="0" Grid.Row="1" Content="Result:" HorizontalContentAlignment="Right" FontWeight="Bold" />
+            <TextBox Grid.Column="1" Grid.Row="1" Margin="5" HorizontalContentAlignment="Left" Text="{Binding OtherFunctionsWindowModel.ResultOfflineMode, Converter={StaticResource CommandResultsToStringConverter}}" Background="Transparent" BorderThickness="0" IsReadOnly="True" TextWrapping="Wrap"/>
+        </Grid>
+
+        <Grid Grid.Column="0" Grid.Row="4">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Stretch" Command="{Binding ClickSendNoOpCommand}" IsEnabled="{Binding ApiInitialized, Source={StaticResource GeneralHelper}}" VerticalAlignment="Center">
+                <TextBlock FontWeight="Bold" Text="Send No-op" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Button>
+            <Label Grid.Column="0" Grid.Row="1" Content="Result:" HorizontalContentAlignment="Right" FontWeight="Bold" />
+            <TextBox Grid.Column="1" Grid.Row="1" Margin="5" HorizontalContentAlignment="Left" Text="{Binding OtherFunctionsWindowModel.ResultSendNoOp}" Background="Transparent" BorderThickness="0" IsReadOnly="True" TextWrapping="Wrap"/>
+        </Grid>
+
+        <Grid Grid.Column="0" Grid.Row="5">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Stretch" Command="{Binding ClickCancelAsyncCallbackCommand}" IsEnabled="{Binding ApiInitialized, Source={StaticResource GeneralHelper}}" VerticalAlignment="Center">
+                <TextBlock FontWeight="Bold" Text="Cancel Async Call-back " HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Button>
+            <Label Grid.Column="0" Grid.Row="1" Content="Result:" HorizontalContentAlignment="Right" FontWeight="Bold" />
+            <TextBox Grid.Column="1" Grid.Row="1" Margin="5" HorizontalContentAlignment="Left" Text="{Binding OtherFunctionsWindowModel.ResultCancelAsyncCallback, Converter={StaticResource CommandResultsToStringConverter}}" Background="Transparent" BorderThickness="0" IsReadOnly="True" TextWrapping="Wrap"/>
+        </Grid>
+
+
+
+        <Grid Grid.Column="1" Grid.Row="0" IsEnabled="{Binding OtherFunctionsWindowModel.HasDevice}">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Stretch" Command="{Binding ClickGetCurrentDeviceNameCommand}" IsEnabled="{Binding OtherFunctionsWindowModel.HasDeviceAndInitialized}" VerticalAlignment="Center">
+                <TextBlock FontWeight="Bold" Text="Get Current Device Name" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Button>
+            <Label Grid.Column="0" Grid.Row="1" Content="Name:" HorizontalContentAlignment="Right" FontWeight="Bold" />
+            <TextBox Grid.Column="1" Grid.Row="1" Margin="5" HorizontalContentAlignment="Left" Text="{Binding OtherFunctionsWindowModel.Name, Converter={StaticResource EmptyStringConverter}, ConverterParameter='(No Info)'}" Background="Transparent" BorderThickness="0" IsReadOnly="True" TextWrapping="Wrap"/>
+        </Grid>
+
+        <Grid Grid.Column="1" Grid.Row="1" IsEnabled="{Binding OtherFunctionsWindowModel.HasDevice}">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Stretch" Command="{Binding ClickGetCurrentDeviceFWVersionCommand}" IsEnabled="{Binding OtherFunctionsWindowModel.HasDeviceAndInitialized}" VerticalAlignment="Center">
+                <TextBlock FontWeight="Bold" Text="Get Current Device FW Version" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Button>
+            <Label Grid.Column="0" Grid.Row="1" Content="FW Version:" HorizontalContentAlignment="Right" FontWeight="Bold" />
+            <TextBox Grid.Column="1" Grid.Row="1" Margin="5" HorizontalContentAlignment="Left" Text="{Binding OtherFunctionsWindowModel.FWVersion, Converter={StaticResource EmptyStringConverter}, ConverterParameter='(No Info)'}" Background="Transparent" BorderThickness="0" IsReadOnly="True" TextWrapping="Wrap"/>
+        </Grid>
+
+        <Grid Grid.Column="1" Grid.Row="2" IsEnabled="{Binding OtherFunctionsWindowModel.HasDevice}">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Stretch" Command="{Binding ClickGetCurrentDeviceAvailableFWVersionsCommand}" IsEnabled="{Binding OtherFunctionsWindowModel.HasDeviceAndInitialized}" VerticalAlignment="Center">
+                <TextBlock FontWeight="Bold" Text="Get Interval Current Device FW Versions" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Button>
+            <Label Grid.Column="0" Grid.Row="1" Content="FW Versions:" HorizontalContentAlignment="Right" FontWeight="Bold" />
+            <TextBox Grid.Column="1" Grid.Row="1" Margin="5" HorizontalContentAlignment="Left" Text="{Binding OtherFunctionsWindowModel.FWVersions, Converter={StaticResource EmptyStringConverter}, ConverterParameter='(No Info)'}" Background="Transparent" BorderThickness="0" IsReadOnly="True" TextWrapping="Wrap"/>
+        </Grid>
+
+        <Grid Grid.Column="1" Grid.Row="3" IsEnabled="{Binding OtherFunctionsWindowModel.HasDevice}">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Stretch" Command="{Binding ClickGetCurrentDeviceLastFWVersionCommand}" IsEnabled="{Binding OtherFunctionsWindowModel.HasDeviceAndInitialized}" VerticalAlignment="Center">
+                <TextBlock FontWeight="Bold" Text="Get Current Device Last FW Version" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Button>
+            <Label Grid.Column="0" Grid.Row="1" Content="Last FWVersion:" HorizontalContentAlignment="Right" FontWeight="Bold" />
+            <TextBox Grid.Column="1" Grid.Row="1" Margin="5" HorizontalContentAlignment="Left" Text="{Binding OtherFunctionsWindowModel.LastFWVersion, Converter={StaticResource EmptyStringConverter}, ConverterParameter='(No Info)'}" Background="Transparent" BorderThickness="0" IsReadOnly="True" TextWrapping="Wrap"/>
+        </Grid>
+
+        <Grid Grid.Column="1" Grid.Row="4">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Stretch" Command="{Binding ClickRefreshConfigCommand}" IsEnabled="{Binding ApiInitialized, Source={StaticResource GeneralHelper}}" VerticalAlignment="Center">
+                <TextBlock FontWeight="Bold" Text="Refresh Config Async" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Button>
+            <Label Grid.Column="0" Grid.Row="1" Content="Result:" HorizontalContentAlignment="Right" FontWeight="Bold" />
+            <TextBox Grid.Column="1" Grid.Row="1" Margin="5" HorizontalContentAlignment="Left" Text="{Binding OtherFunctionsWindowModel.ResultRefreshConfig, Converter={StaticResource CommandResultsToStringConverter}}" Background="Transparent" BorderThickness="0" IsReadOnly="True" TextWrapping="Wrap"/>
+        </Grid>
+
+        <Grid Grid.Column="1" Grid.Row="5">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" HorizontalContentAlignment="Stretch" Command="{Binding ClickGetSDKVersionAsyncCommand}" VerticalAlignment="Center">
+                <TextBlock FontWeight="Bold" Text="Get SDK Version Async" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Button>
+            <Label Grid.Column="0" Grid.Row="1" Content="Result:" HorizontalContentAlignment="Right" FontWeight="Bold" />
+            <TextBox Grid.Column="1" Grid.Row="1" Margin="5" HorizontalContentAlignment="Left" Text="{Binding OtherFunctionsWindowModel.ResultGetSDKVersionAsync}" Background="Transparent" BorderThickness="0" IsReadOnly="True" TextWrapping="Wrap"/>
+        </Grid>
+
+    </Grid>
+</Window>

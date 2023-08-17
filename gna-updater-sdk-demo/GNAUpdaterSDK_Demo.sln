@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1778
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GNAUpdaterSDK_Demo", "GNAUpdaterSDK_Demo.csproj", "{F0C236A3-E6B2-47F1-AE56-200C16BFEF7E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+		ReleaseDevVer|Any CPU = ReleaseDevVer|Any CPU
+		ReleaseDevVer|x64 = ReleaseDevVer|x64
+		ReleaseDevVer|x86 = ReleaseDevVer|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F0C236A3-E6B2-47F1-AE56-200C16BFEF7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0C236A3-E6B2-47F1-AE56-200C16BFEF7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0C236A3-E6B2-47F1-AE56-200C16BFEF7E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F0C236A3-E6B2-47F1-AE56-200C16BFEF7E}.Debug|x64.Build.0 = Debug|Any CPU
+		{F0C236A3-E6B2-47F1-AE56-200C16BFEF7E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F0C236A3-E6B2-47F1-AE56-200C16BFEF7E}.Debug|x86.Build.0 = Debug|Any CPU
+		{F0C236A3-E6B2-47F1-AE56-200C16BFEF7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0C236A3-E6B2-47F1-AE56-200C16BFEF7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0C236A3-E6B2-47F1-AE56-200C16BFEF7E}.Release|x64.ActiveCfg = Release|Any CPU
+		{F0C236A3-E6B2-47F1-AE56-200C16BFEF7E}.Release|x64.Build.0 = Release|Any CPU
+		{F0C236A3-E6B2-47F1-AE56-200C16BFEF7E}.Release|x86.ActiveCfg = Release|Any CPU
+		{F0C236A3-E6B2-47F1-AE56-200C16BFEF7E}.Release|x86.Build.0 = Release|Any CPU
+		{F0C236A3-E6B2-47F1-AE56-200C16BFEF7E}.ReleaseDevVer|Any CPU.ActiveCfg = Release|Any CPU
+		{F0C236A3-E6B2-47F1-AE56-200C16BFEF7E}.ReleaseDevVer|Any CPU.Build.0 = Release|Any CPU
+		{F0C236A3-E6B2-47F1-AE56-200C16BFEF7E}.ReleaseDevVer|x64.ActiveCfg = Release|Any CPU
+		{F0C236A3-E6B2-47F1-AE56-200C16BFEF7E}.ReleaseDevVer|x64.Build.0 = Release|Any CPU
+		{F0C236A3-E6B2-47F1-AE56-200C16BFEF7E}.ReleaseDevVer|x86.ActiveCfg = Release|Any CPU
+		{F0C236A3-E6B2-47F1-AE56-200C16BFEF7E}.ReleaseDevVer|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CCE7163D-3B42-4122-85F2-D165EEBC6862}
+	EndGlobalSection
+EndGlobal
